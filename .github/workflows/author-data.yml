@@ -1,0 +1,30 @@
+name: Author dataset integrity check
+on:
+  push:
+    branches: [experiment/mbpp-real-evaluation]
+    paths:
+      - tools/fetch_author_data.py
+      - .github/workflows/author-data.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  fetch-and-inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.9"
+      - name: Install the Google Drive downloader
+        run: python -m pip install gdown==5.2.0
+      - name: Fetch author archive and verify data layout
+        run: python tools/fetch_author_data.py
+      - name: Upload data provenance only (no dataset redistribution)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: author-data-manifest
+          path: experiments/author_data_manifest.json
+          if-no-files-found: ignore
