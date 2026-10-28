@@ -34,13 +34,28 @@ class ScoreSamplingTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             DataUtils("unused")._compute_probabilities([])
 
-    def test_baseline_round_is_included_in_candidate_list(self):
+    def test_top_k_only_includes_best_candidates(self):
         with tempfile.TemporaryDirectory() as tmp:
             workspace = Path(tmp) / "workflows"
             workspace.mkdir()
             (workspace / "results.json").write_text(
                 json.dumps([
                     {"round": 1, "score": 0.25},
+                    {"round": 2, "score": 0.75},
+                    {"round": 3, "score": 0.65},
+                ]), encoding="utf-8"
+            )
+            candidates = DataUtils(tmp).get_top_rounds(sample=2)
+            # In the frozen upstream code, round 1 is NOT forced into the top-k pool.
+            self.assertEqual([item["round"] for item in candidates], [2, 3])
+
+    def test_baseline_round_is_ordered_first_only_if_selected(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            workspace = Path(tmp) / "workflows"
+            workspace.mkdir()
+            (workspace / "results.json").write_text(
+                json.dumps([
+                    {"round": 1, "score": 0.70},
                     {"round": 2, "score": 0.75},
                     {"round": 3, "score": 0.65},
                 ]), encoding="utf-8"
