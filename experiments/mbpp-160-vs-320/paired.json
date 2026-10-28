@@ -1,0 +1,44 @@
+{
+  "experiment_type": "paired_validation_decoding_length_ablation",
+  "not_aflow_optimization": true,
+  "not_paper_replication": true,
+  "dataset_sha256": "04c54e076bb2cb1a583d8e57110e3a644ae3125699b3309104d3b8cf95436216",
+  "model_sha": "ea3f2471cf1b1f0db85067f1ef93848e38e88c25",
+  "n": 6,
+  "configuration_a": {
+    "max_new_tokens": 160,
+    "passed": 1,
+    "accuracy": 0.16666666666666666,
+    "generated_tokens": 956
+  },
+  "configuration_b": {
+    "max_new_tokens": 320,
+    "passed": 1,
+    "accuracy": 0.16666666666666666,
+    "generated_tokens": 1396
+  },
+  "delta_accuracy_percentage_points": 0,
+  "improved_tasks": 0,
+  "worsened_tasks": 0,
+  "changed_predictions": 2,
+  "exact_mcnemar_two_sided_p_exploratory": 1,
+  "scores_a": [
+    0,
+    1,
+    0,
+    0,
+    0,
+    0
+  ],
+  "scores_b": [
+    0,
+    1,
+    0,
+    0,
+    0,
+    0
+  ],
+  "evidence_a": "https://github.com/ZJY-HSBL/AFlow-Repro/actions/runs/40628228601",
+  "evidence_b": "https://github.com/ZJY-HSBL/AFlow-Repro/actions/runs/40628958327",
+  "pairing_verified_by": "All six ordered inputs, model id, checkpoint SHA and dataset SHA equal, verified from archived CSV and JSON"
+}

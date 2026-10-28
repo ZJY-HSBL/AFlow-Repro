@@ -124,6 +124,14 @@ On the **original AFlow author MBPP validation split** (86 problems), a real loc
 
 在原作者的 MBPP 验证集上，开源模型首次实测 6 道题正确 1 道，准确率 16.67%；输出预算消耗 956/960 Token。**这不是 MCTS 优化结果，也不能用 6 道题直接推断完整基准表现。**
 
+### Paired decoding ablation / 配对输出长度消融
+
+![160 vs 320 output tokens](experiments/mbpp-160-vs-320/comparison.svg)
+
+Keeping the **same 6 validation prompts**, identical model checkpoint, evaluator and greedy decoding, increasing the output cap from 160 to 320 tokens produced **1/6 correct in both runs (0 percentage-point gain)**. Two model predictions changed, but neither became correct. Tokens generated rose from 956 to 1,396. **This is a tiny, descriptive comparison, not a statistical claim about the full dataset.** [Full experiment notes](docs/EXPERIMENT_002.md) · [320-token run evidence](https://github.com/ZJY-HSBL/AFlow-Repro/actions/runs/40628958327).
+
+在模型、验证题目及评分规则不变的条件下，160 与 320 Token 的正确率均为 16.67%。仅增大输出长度未改善这 6 题的成功数；下一步需要研究 Agent 的测试反馈与自动修复机制。
+
 ### Original dataset and evaluator / 作者数据与评测验证
 
 - The original 15-file author archive was downloaded and verified, SHA256 recorded in [provenance metadata](experiments/original-data/manifest.json).
