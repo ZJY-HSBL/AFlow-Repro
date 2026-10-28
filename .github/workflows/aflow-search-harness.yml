@@ -25,6 +25,11 @@ jobs:
         run: python tools/fetch_author_data.py
       - name: Start secured code execution image
         run: docker pull python:3.11-slim
+      - name: Isolate upstream's pre-existing archived scores from new harness measurements
+        run: |
+          if [ -f workspace/MBPP/workflows/results.json ]; then
+            mv workspace/MBPP/workflows/results.json "$RUNNER_TEMP/aflow_original_scores.json"
+          fi
       - name: Execute original AFlow search cycle with deterministic transport and real evaluator
         run: python -m tools.run_aflow_search_harness --limit 3 --timeout 120
       - name: Save original optimizer search-state evidence
