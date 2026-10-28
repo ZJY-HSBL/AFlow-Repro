@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="315" viewBox="0 0 960 315" role="img" aria-label="AFlow integration and real model proposal validation">
+<rect width="960" height="315" rx="16" fill="#f8fafb"/>
+<text x="30" y="42" font-family="Arial" font-size="23" fill="#153745" font-weight="700">AFlow v0.3.0 — Two independently verified tracks</text>
+<text x="30" y="70" font-family="Arial" font-size="13" fill="#58717b">One scripted control-flow integration and one genuinely model-generated optimization proposal</text>
+<rect x="30" y="92" width="435" height="168" rx="12" fill="#e5f3ee" stroke="#a9d7c9"/>
+<text x="52" y="125" font-family="Arial" font-size="18" fill="#166353" font-weight="700">ORIGINAL OPTIMIZER HARNESS</text>
+<text x="52" y="154" font-family="Arial" font-size="15" fill="#255b50">Control flow: completed</text>
+<text x="52" y="180" font-family="Arial" font-size="14" fill="#255b50">1 scripted proposal / 2 workflow rounds</text>
+<text x="52" y="203" font-family="Arial" font-size="14" fill="#255b50">6 reference-code evaluations</text>
+<text x="52" y="228" font-family="Arial" font-size="12" fill="#507367">Not a model-generated optimization result</text>
+<rect x="493" y="92" width="437" height="168" rx="12" fill="#fff0e5" stroke="#e8c6ac"/>
+<text x="516" y="125" font-family="Arial" font-size="18" fill="#9b5627" font-weight="700">REAL OPEN MODEL PROPOSAL</text>
+<text x="516" y="154" font-family="Arial" font-size="15" fill="#96542e">Structural validation: failed</text>
+<text x="516" y="180" font-family="Arial" font-size="14" fill="#96542e">320 generated tokens / 1 real attempt</text>
+<text x="516" y="203" font-family="Arial" font-size="14" fill="#96542e">Missing XML fields; invalid graph Python</text>
+<text x="516" y="228" font-family="Arial" font-size="12" fill="#997251">No candidate graph was executed or graded</text>
+<text x="30" y="290" font-family="Arial" font-size="12" fill="#607781">Source: GitHub Actions 40632060645 and 40631906442, 2026-10-28. Original algorithm files remain unmodified.</text>
+</svg>

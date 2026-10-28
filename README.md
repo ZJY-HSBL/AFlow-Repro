@@ -139,14 +139,28 @@ Keeping the **same 6 validation prompts**, identical model checkpoint, evaluator
 - The author's 1,538-file historical search archive was also verified once ([SHA256 manifest](experiments/original-data/author_trajectories_provenance.json)); these archived trajectories are not newly run optimization experiments.
 - Automated tests additionally enforce exact original Git blob checksums for all 102 upstream text files.
 
+### v0.3.0 — Original optimizer closed-loop and real proposal feasibility / 原始优化器闭环与真实提案检查
+
+![Independent search-control verification and real proposal feasibility](experiments/aflow-v0.3.0/validation.svg)
+
+**A. Reproducible original-control-flow integration.** In a disposable CI checkout, the unmodified `Optimizer._optimize_graph()` completed baseline evaluation, candidate selection, graph/prompt writing, import, evaluation, and experience recording on 3 author MBPP validation examples. One *scripted* optimizer proposal and six *reference-solution* code executions were involved. Both workflow scores were 3/3 because the harness used author reference solutions, **not any LLM inference**. No improvement was observed (`succeed=false`). [Original optimizer CI evidence](https://github.com/ZJY-HSBL/AFlow-Repro/actions/runs/40632060645).
+
+**B. Actual model optimizer-proposal feasibility.** Qwen2.5-Coder-0.5B-Instruct received the original 6,709-character AFlow graph-optimization prompt (1,392 input tokens), generated 320 tokens, and produced an incomplete, syntactically invalid proposal: `modification` and `prompt` were empty, and `graph.py` failed AST compilation. Upstream XML parsing nevertheless returned `valid=True`, revealing a missing structural validation boundary. **No autonomous model-generated workflow was executed.** [Actual open-model inference evidence](https://github.com/ZJY-HSBL/AFlow-Repro/actions/runs/40631906442).
+
+**C. Added strict pre-import gate.** `tools/validate_workflow_proposal.py` checks all required fields, graph structure and Python syntax (including `prompt.py`) before any dynamic import. It is a preflight guard, **not** a secure execution sandbox. Original AFlow algorithm files remain SHA-identical to upstream.
+
+从本次两项实验可以严格区分：原始 AFlow 搜索控制逻辑能够运行，但目前的 0.5B 模型在一次正式优化提示词测试中未生成可执行工作流。这不能归结为搜索算法失效，更不能声称已经获得 AFlow 搜索收益。[实验分析](docs/EXPERIMENT_003.md)。
+
 ## Progress / 复现进度
 
 - [x] Confirm ICLR 2025 and pin the exact upstream commit.
 - [x] Import and verify 102 upstream text files against original Git blob hashes.
 - [x] Add offline tests, experiment preflight, MBPP baseline runner and measured-curve plotter.
-- [x] CI green: Python 3.9 syntax, 18 offline tests, CLI import smoke tests.
+- [x] CI green: Python 3.9 syntax, original-source SHA checks and offline tests, CLI import smoke tests.
 - [x] Download original author MBPP data; verify 20 reference tests; run a real six-task CPU-model baseline (smoke evaluation).
-- [ ] Run official AFlow search and save raw optimization trajectories.
+- [x] Execute original AFlow optimizer end-to-end with a deterministic transport and sandboxed reference evaluator (integration test only).
+- [x] Probe a real open-weight LLM on the unmodified optimizer prompt; record invalid candidate and add a strict schema/syntax gate.
+- [ ] Complete a genuinely model-generated, executable AFlow search iteration and held-out evaluation.
 - [ ] Perform untouched test evaluation and multi-seed statistical analysis.
 - [x] Publish a source-backed real-model six-task SVG and raw evidence links.
 - [ ] Expand baseline to full validation with matched models, then publish repeated-run statistical reports.
