@@ -13,7 +13,7 @@ class SecurityContractTests(unittest.TestCase):
         self.assertIn("--security-opt=no-new-privileges", command)
         self.assertIn("--pids-limit=32", command)
         self.assertIn("--user=65534:65534", command)
-        self.assertEqual(command[-4:-2], ["-S", "-c"])
+        self.assertEqual(command[-3:-1], ["-S", "-c"])
 
 
 if __name__ == "__main__":
