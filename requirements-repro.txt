@@ -1,0 +1,3 @@
+# Reproduction-only dependency addition; upstream requirements.txt is unchanged.
+-r requirements.txt
+requests==2.32.3
