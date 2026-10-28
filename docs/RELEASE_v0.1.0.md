@@ -8,6 +8,6 @@ This is a **source and regression-test milestone, not a reproduction of publishe
 - Added Python 3.9 offline regression tests, CI, MBPP direct-model adapter, preflight checker, real-result SVG plotting, and bilingual documentation.
 - Upstream image assets and externally hosted benchmark archives are not included.
 
-**Validation scope:** GitHub CI checks syntax, basic behavior and entrypoint imports only; it does not perform LLM calls or author-scale experiments.
+**Validation scope:** GitHub CI successfully checks Python 3.9 syntax, 18 offline tests and entrypoint imports only; it does not perform LLM calls or author-scale experiments.
 
 **Next:** Obtain datasets, configure a selected inference model, measure direct baseline, run original MCTS workflow search, and evaluate held-out tasks.

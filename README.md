@@ -1,5 +1,7 @@
 # AFlow-Repro
 
+[![Reproduction checks](https://github.com/ZJY-HSBL/AFlow-Repro/actions/workflows/ci.yml/badge.svg)](https://github.com/ZJY-HSBL/AFlow-Repro/actions/workflows/ci.yml)
+
 **AFlow (ICLR 2025 Oral): faithful source reproduction and independent evaluation.**  
 **AFlow（ICLR 2025 Oral）：原始源码复现与独立实验验证。**
 
@@ -119,7 +121,7 @@ No fabricated plots or paper-sourced results are presented as measurements. Real
 - [x] Confirm ICLR 2025 and pin the exact upstream commit.
 - [x] Import and verify 102 upstream text files against original Git blob hashes.
 - [x] Add offline tests, experiment preflight, MBPP baseline runner and measured-curve plotter.
-- [ ] CI checks and offline tests pass.
+- [x] CI green: Python 3.9 syntax, 18 offline tests, CLI import smoke tests.
 - [ ] Download benchmark data and run a real-model baseline.
 - [ ] Run official AFlow search and save raw optimization trajectories.
 - [ ] Perform untouched test evaluation and multi-seed statistical analysis.

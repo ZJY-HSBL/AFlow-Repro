@@ -36,7 +36,7 @@ For every experiment retain: UTC date, source/reproduction git SHA, OS/Python/GP
 ## 5. Maturity / 成熟度
 
 - L0: Source imported and verified — completed.
-- L1: CI and offline algorithm regressions — pending verified CI.
+- L1: CI and 18 offline algorithm regressions — completed; see GitHub Actions.
 - L2: Measured direct-model MBPP baseline — pending.
 - L3: AFlow search and held-out benchmark — pending.
 - L4: Multi-seed experiments and statistical ablations — pending.
