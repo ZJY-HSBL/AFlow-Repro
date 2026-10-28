@@ -14,12 +14,16 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.event.workflow_run.head_sha }}
-      - name: Publish release only when its evidence and main CI are verified
+      - name: Publish release only when main CI succeeded
         env:
           GH_TOKEN: ${{ github.token }}
           TARGET_SHA: ${{ github.event.workflow_run.head_sha }}
         run: |
-          if [ -f docs/RELEASE_v0.2.0.md ]; then
+          if [ -f docs/RELEASE_v0.3.0.md ]; then
+            if ! gh release view v0.3.0 >/dev/null 2>&1; then
+              gh release create v0.3.0 --target "$TARGET_SHA" --title "v0.3.0 · Verified AFlow search control flow and real proposal feasibility" --notes-file docs/RELEASE_v0.3.0.md
+            fi
+          elif [ -f docs/RELEASE_v0.2.0.md ]; then
             if ! gh release view v0.2.0 >/dev/null 2>&1; then
               gh release create v0.2.0 --target "$TARGET_SHA" --title "v0.2.0 · Real MBPP evaluation milestone" --notes-file docs/RELEASE_v0.2.0.md
             fi

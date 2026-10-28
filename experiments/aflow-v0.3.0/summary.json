@@ -1,0 +1,43 @@
+{
+  "version": "0.3.0",
+  "source_commit": "3f457218fc716093fe53f6df8a5d5e6379d66346",
+  "experiment_1": {
+    "kind": "deterministic_optimizer_end_to_end_integration",
+    "model_generated": false,
+    "n_validation_examples": 3,
+    "seed": 0,
+    "optimizer_proposals_scripted": 1,
+    "original_optimizer_executed": true,
+    "oracle_code_exec_count": 6,
+    "oracle_baseline_score": 1,
+    "oracle_candidate_score": 1,
+    "experience_succeed": false,
+    "generated_graph_sha256": "c8db62e5ea205aa34e80a7802af8dc511b2b95aab47b318899d7a39b3f681190",
+    "dataset_sha256": "04c54e076bb2cb1a583d8e57110e3a644ae3125699b3309104d3b8cf95436216",
+    "log": "https://github.com/ZJY-HSBL/AFlow-Repro/actions/runs/40632060645",
+    "comment": "Scores use author reference solutions and scripted proposal; not LLM/optimization performance"
+  },
+  "experiment_2": {
+    "kind": "real_optimizer_prompt_feasibility_probe",
+    "model_generated": true,
+    "full_optimizer_search_run": false,
+    "model": "Qwen/Qwen2.5-Coder-0.5B-Instruct",
+    "model_revision": "ea3f2471cf1b1f0db85067f1ef93848e38e88c25",
+    "optimizer_prompt_characters": 6709,
+    "optimizer_prompt_tokens": 1392,
+    "output_token_budget": 320,
+    "generated_tokens": 320,
+    "raw_xml_formatter_valid": true,
+    "complete_required_fields": false,
+    "nonempty_fields": {
+      "modification": false,
+      "graph": true,
+      "prompt": false
+    },
+    "graph_python_ast_valid": false,
+    "strict_structural_acceptance": false,
+    "log": "https://github.com/ZJY-HSBL/AFlow-Repro/actions/runs/40631906442",
+    "comment": "Actual one-sample model output was not runnable, no candidate benchmark executed."
+  },
+  "remaining": "No autonomous AFlow MCTS/model-generated search trajectories yet; no held-out test or paper-equivalent numerical reproduction."
+}
