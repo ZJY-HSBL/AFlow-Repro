@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 215" role="img" aria-label="AFlow optimization and evaluation">
+<rect width="960" height="215" rx="15" fill="#f7fafc"/>
+<text x="30" y="35" font-family="Arial" font-size="22" font-weight="bold" fill="#122b38">AFlow: reproducible workflow optimization</text>
+<g font-family="Arial">
+<rect x="32" y="69" width="196" height="89" rx="12" fill="#fff" stroke="#91a8b4"/>
+<text x="130" y="103" font-size="17" text-anchor="middle" fill="#123e52">Initial workflow</text><text x="130" y="128" font-size="12" text-anchor="middle" fill="#526d77">Official round_1 graph</text>
+<rect x="276" y="69" width="196" height="89" rx="12" fill="#fff" stroke="#91a8b4"/>
+<text x="374" y="103" font-size="17" text-anchor="middle" fill="#123e52">MCTS optimizer</text><text x="374" y="128" font-size="12" text-anchor="middle" fill="#526d77">Sample / modify / record</text>
+<rect x="520" y="69" width="196" height="89" rx="12" fill="#fff" stroke="#91a8b4"/>
+<text x="618" y="103" font-size="17" text-anchor="middle" fill="#123e52">Task evaluator</text><text x="618" y="128" font-size="12" text-anchor="middle" fill="#526d77">Validation feedback</text>
+<rect x="764" y="69" width="166" height="89" rx="12" fill="#e4f5f3" stroke="#078d86"/>
+<text x="847" y="103" font-size="17" text-anchor="middle" fill="#086b66">Frozen winner</text><text x="847" y="128" font-size="12" text-anchor="middle" fill="#526d77">Held-out test</text>
+<g fill="none" stroke="#0c8384" stroke-width="3" stroke-linejoin="round">
+<path d="M228 114h42m-9 -8 9 8 -9 8M472 114h42m-9 -8 9 8 -9 8M716 114h42m-9 -8 9 8 -9 8"/>
+<path d="M618 159v24H374v-24m-8 9 8 -9 8 9" stroke-dasharray="6 5"/>
+</g>
+<text x="500" y="203" text-anchor="middle" font-size="11" fill="#526d77">Repeat search using measured validation feedback; keep test split held out</text>
+</g></svg>
