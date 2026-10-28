@@ -1,0 +1,29 @@
+{
+  "method": "direct_model_code_generation",
+  "is_aflow_optimized": false,
+  "is_paper_equivalent": false,
+  "reference": "FoundationAgents/AFlow ICLR 2025 author MBPP validate",
+  "dataset_sha256": "04c54e076bb2cb1a583d8e57110e3a644ae3125699b3309104d3b8cf95436216",
+  "data_rows": 86,
+  "model": "Qwen/Qwen2.5-Coder-0.5B-Instruct",
+  "model_sha": "ea3f2471cf1b1f0db85067f1ef93848e38e88c25",
+  "inference": "transformers CPU, float32, greedy",
+  "max_new_tokens": 160,
+  "evaluated_examples": 6,
+  "correct_examples": 1,
+  "accuracy": 0.16666666666666666,
+  "total_prompt_tokens": 677,
+  "total_generated_tokens": 956,
+  "execution": "Docker Python 3.11, no network and no host mounts",
+  "timestamp_utc": "2026-10-28T03:47:49.597544+00:00",
+  "score_sequence": [
+    0,
+    1,
+    0,
+    0,
+    0,
+    0
+  ],
+  "raw_evidence": "https://github.com/ZJY-HSBL/AFlow-Repro/actions/runs/40628228601",
+  "note": "Not AFlow-optimized. n=6; token limit saturated."
+}

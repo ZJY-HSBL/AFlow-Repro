@@ -1,4 +1,4 @@
-name: Real MBPP CPU model baseline
+name: MBPP token budget ablation (320 tokens)
 on:
   push:
     branches: [experiment/mbpp-real-evaluation]
@@ -34,14 +34,14 @@ jobs:
           HF_HUB_DISABLE_TELEMETRY: "1"
           TOKENIZERS_PARALLELISM: "false"
           OMP_NUM_THREADS: "2"
-        run: python -m tools.run_mbpp_cpu --limit 6 --max-new-tokens 160
+        run: python -m tools.run_mbpp_cpu --limit 6 --max-new-tokens 320 --output experiments/author-mbpp-cpu-320
       - name: Upload actual model outputs and protocol manifest
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: real-cpu-mbpp-evidence
+          name: mbpp-cpu-320-evidence
           path: |
             experiments/author_data_manifest.json
-            experiments/author-mbpp-cpu/*.json
-            experiments/author-mbpp-cpu/*.csv
+            experiments/author-mbpp-cpu-320/*.json
+            experiments/author-mbpp-cpu-320/*.csv
           if-no-files-found: ignore
