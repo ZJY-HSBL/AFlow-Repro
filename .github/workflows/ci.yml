@@ -23,5 +23,10 @@ jobs:
         run: python -m compileall -q run.py run_baseline.py benchmarks data scripts workspace tools tests
       - name: Run offline algorithm regression tests
         run: python -m unittest discover -s tests -v
+      - name: Smoke test CLI module imports
+        run: |
+          python run.py --help
+          python tools/run_mbpp_baseline.py --help
+          python tools/plot_results.py --help
       - name: Report dataset and config readiness without secrets
         run: python tools/preflight.py --dataset MBPP

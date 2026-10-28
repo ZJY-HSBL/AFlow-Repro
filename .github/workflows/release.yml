@@ -1,0 +1,26 @@
+name: Publish source-verified milestone
+on:
+  workflow_run:
+    workflows: ["Reproduction checks"]
+    types: [completed]
+    branches: [main]
+permissions:
+  contents: write
+jobs:
+  release:
+    if: github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
+      - name: Publish v0.1.0 only once after green main CI
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TARGET_SHA: ${{ github.event.workflow_run.head_sha }}
+        run: |
+          if gh release view v0.1.0 >/dev/null 2>&1; then
+            echo "v0.1.0 already published; no new release needed."
+            exit 0
+          fi
+          gh release create v0.1.0 --target "$TARGET_SHA" --title "v0.1.0 · Verified AFlow source baseline" --notes-file docs/RELEASE_v0.1.0.md
