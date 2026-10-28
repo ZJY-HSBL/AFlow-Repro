@@ -7,7 +7,7 @@ on:
       - .github/workflows/author-results.yml
   workflow_dispatch:
 permissions:
-  contents: read
+  contents: write
 jobs:
   inspect:
     runs-on: ubuntu-latest
@@ -18,12 +18,23 @@ jobs:
         with:
           python-version: "3.9"
       - run: python -m pip install gdown==5.2.0
-      - name: Download author published results and inspect archive without executing anything
+      - name: Inspect actual archive and generate clearly labeled author-archive curves
         run: python -m tools.fetch_author_results
-      - name: Archive provenance metadata, not result contents
+      - name: Commit author-archive summaries (not reproduction metrics)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add experiments/author-published/ experiments/author_results_manifest.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "data: independently summarize author-published AFlow search records"
+          git push origin "HEAD:experiment/mbpp-real-evaluation"
+      - name: Archive the provenance evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: author-published-results-provenance
-          path: experiments/author_results_manifest.json
+          path: |
+            experiments/author_results_manifest.json
+            experiments/author-published/*.json
+            experiments/author-published/*.svg
           if-no-files-found: ignore
