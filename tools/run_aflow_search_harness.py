@@ -70,7 +70,7 @@ class DeterministicFixtureTransport:
             return {
                 "modification": "harness_only_equivalent_workflow",
                 "graph": OPERATOR_GRAPH,
-                "prompt": "HARNESS ONLY: fixed workflow. Not an LM proposal.",
+                "prompt": "# HARNESS ONLY: fixed workflow; not an LM proposal.\n",
             }
         raise ValueError(f"Unexpected formatter: {type(formatter).__name__}")
 
