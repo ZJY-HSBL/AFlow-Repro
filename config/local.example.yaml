@@ -1,0 +1,16 @@
+# Copy to config/config2.yaml and edit the URL/model to match your local server.
+# This is an API-compatible inference endpoint, not Claude Code/Codex.
+# The original AFlow code uses OpenAI-compatible chat completions.
+models:
+  local-optimizer:
+    api_type: openai
+    base_url: "http://127.0.0.1:8000/v1"
+    api_key: "local-placeholder"
+    temperature: 0
+  local-executor:
+    api_type: openai
+    base_url: "http://127.0.0.1:8000/v1"
+    api_key: "local-placeholder"
+    temperature: 0
+# IMPORTANT: model names above must be accepted by the inference server.
+# They are examples, NOT verified model identifiers for any given server.
