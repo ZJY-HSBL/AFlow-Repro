@@ -60,7 +60,7 @@ class DeterministicFixtureTransport:
             if len(matches) != 1:
                 raise ValueError(f"Expected one reference task, found {len(matches)}")
             self.calls["code"] += 1
-            code = "def " + matches[0]["code"]
+            code = matches[0]["code"]  # Author JSONL already contains the complete function.
             valid, data = formatter.validate_response(code)
             if not valid:
                 raise ValueError(f"Reference code validation failed: {data}")
