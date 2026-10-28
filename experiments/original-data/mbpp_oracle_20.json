@@ -1,0 +1,15 @@
+{
+  "type": "reference_oracle_evaluator_check",
+  "is_llm_result": false,
+  "is_paper_replication": false,
+  "source": "AFlow author-provided MBPP split",
+  "split": "validate",
+  "dataset_sha256": "04c54e076bb2cb1a583d8e57110e3a644ae3125699b3309104d3b8cf95436216",
+  "dataset_rows": 86,
+  "evaluated_rows": 20,
+  "reference_test_pass_rate": 1,
+  "execution": "Docker no-network read-only sandbox, Python 3.11",
+  "timestamp_utc": "2026-10-28T03:42:31.316444+00:00",
+  "github_actions_url": "https://github.com/ZJY-HSBL/AFlow-Repro/actions/runs/40628141707",
+  "warning": "Oracle/reference-code accuracy is NOT an LLM baseline or AFlow algorithm performance."
+}

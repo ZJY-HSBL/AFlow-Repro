@@ -1,0 +1,10 @@
+{
+  "type": "archived_author_search_traces",
+  "source_drive_id": "1Sr5wjgKf3bN8OC7G6cO3ynzJqD4w6_Dv",
+  "archive_sha256": "f460f9c9218216f6fbaf553f4f215248317b7f37dd715ae146cd38199eabe5f7",
+  "compressed_bytes": 51011459,
+  "uncompressed_bytes": 180592343,
+  "file_count": 1538,
+  "description": "Includes result JSON, generated workflows, prompts, scores and logs from the original authors; no locally regenerated search metrics.",
+  "github_actions_url": "https://github.com/ZJY-HSBL/AFlow-Repro/actions/runs/40628352403"
+}

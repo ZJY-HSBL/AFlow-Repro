@@ -1,0 +1,47 @@
+name: MBPP token budget ablation (320 tokens)
+on:
+  push:
+    branches: [experiment/mbpp-real-evaluation]
+    paths:
+      - tools/run_mbpp_cpu.py
+      - .github/workflows/mbpp-cpu.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  measure:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.9"
+      - name: Install AFlow dependencies and original data downloader
+        run: |
+          python -m pip install -r requirements-repro.txt
+          python -m pip install gdown==5.2.0
+      - name: Fetch the original author dataset with checksum evidence
+        run: python tools/fetch_author_data.py
+      - name: Install CPU PyTorch and local model runtime
+        run: |
+          python -m pip install torch==2.4.1 --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install transformers==4.45.2 huggingface_hub==0.25.2 safetensors==0.4.5
+      - name: Pull isolated execution environment
+        run: docker pull python:3.11-slim
+      - name: Run real local-model code generation on MBPP validation set
+        env:
+          HF_HUB_DISABLE_TELEMETRY: "1"
+          TOKENIZERS_PARALLELISM: "false"
+          OMP_NUM_THREADS: "2"
+        run: python -m tools.run_mbpp_cpu --limit 6 --max-new-tokens 320 --output experiments/author-mbpp-cpu-320
+      - name: Upload actual model outputs and protocol manifest
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mbpp-cpu-320-evidence
+          path: |
+            experiments/author_data_manifest.json
+            experiments/author-mbpp-cpu-320/*.json
+            experiments/author-mbpp-cpu-320/*.csv
+          if-no-files-found: ignore

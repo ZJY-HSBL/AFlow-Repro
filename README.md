@@ -7,9 +7,9 @@
 
 [ICLR 2025 paper / 正式论文](https://proceedings.iclr.cc/paper_files/paper/2025/hash/5492ecbce4439401798dcd2c90be94cd-Abstract-Conference.html) · [OpenReview](https://openreview.net/forum?id=z5uVAKwmjf) · [Official source / 官方源码](https://github.com/FoundationAgents/AFlow) · [Original README / 官方说明](docs/UPSTREAM_README.md)
 
-> **Status / 当前状态：102 upstream text files imported with matching Git blob SHA. Offline regression tests added. The published benchmark results have NOT been reproduced.**
+> **Status / 当前状态：Author MBPP dataset verified; 20 reference programs tested successfully; real six-example CPU-model baseline measured. Full AFlow MCTS experiments and paper metrics NOT yet reproduced.**
 >
-> **进度：102 个上游文本文件均已导入并通过 Git Blob SHA 一致性检查；已增加离线回归测试。原论文实验结果尚未复现。**
+> **进度：已取得原作者 MBPP 数据，完成 20 道参考代码评测和 6 道真实开源模型基线；尚未进行完整 MCTS 搜索，不能宣称论文指标复现完成。**
 
 ![AFlow conceptual pipeline](docs/workflow.svg)
 
@@ -116,16 +116,40 @@ python tools/plot_results.py --input workspace/MBPP/workflows/results.json \
 
 No fabricated plots or paper-sourced results are presented as measurements. Real experiments must record checkpoint and dataset checksums, model/decoding parameters, search budget, seeds, raw trajectories and error cases.
 
+### Measured MBPP CPU baseline / 实测开源模型基线
+
+![Measured 6-task MBPP baseline](experiments/mbpp-cpu-160/scores.svg)
+
+On the **original AFlow author MBPP validation split** (86 problems), a real locally loaded Qwen2.5-Coder-0.5B-Instruct model solved **1/6 of the first six tasks (16.67%)** with 160 output tokens, greedy decoding and the unchanged AFlow code-generator operator. **This is NOT an AFlow-optimized result, and it is not statistically representative.** The generation budget was almost completely exhausted (956 of 960 available tokens). [Experiment record](docs/EXPERIMENT_001.md) · [Original raw output artifact](https://github.com/ZJY-HSBL/AFlow-Repro/actions/runs/40628228601).
+
+在原作者的 MBPP 验证集上，开源模型首次实测 6 道题正确 1 道，准确率 16.67%；输出预算消耗 956/960 Token。**这不是 MCTS 优化结果，也不能用 6 道题直接推断完整基准表现。**
+
+### Paired decoding ablation / 配对输出长度消融
+
+![160 vs 320 output tokens](experiments/mbpp-160-vs-320/comparison.svg)
+
+Keeping the **same 6 validation prompts**, identical model checkpoint, evaluator and greedy decoding, increasing the output cap from 160 to 320 tokens produced **1/6 correct in both runs (0 percentage-point gain)**. Two model predictions changed, but neither became correct. Tokens generated rose from 956 to 1,396. **This is a tiny, descriptive comparison, not a statistical claim about the full dataset.** [Full experiment notes](docs/EXPERIMENT_002.md) · [320-token run evidence](https://github.com/ZJY-HSBL/AFlow-Repro/actions/runs/40628958327).
+
+在模型、验证题目及评分规则不变的条件下，160 与 320 Token 的正确率均为 16.67%。仅增大输出长度未改善这 6 题的成功数；下一步需要研究 Agent 的测试反馈与自动修复机制。
+
+### Original dataset and evaluator / 作者数据与评测验证
+
+- The original 15-file author archive was downloaded and verified, SHA256 recorded in [provenance metadata](experiments/original-data/manifest.json).
+- 20 reference implementations scored 20/20 through the original AFlow MBPP grading semantics under isolated Docker (this is an **oracle sanity check**, never an LLM score). [Evidence](experiments/original-data/mbpp_oracle_20.json).
+- The author's 1,538-file historical search archive was also verified once ([SHA256 manifest](experiments/original-data/author_trajectories_provenance.json)); these archived trajectories are not newly run optimization experiments.
+- Automated tests additionally enforce exact original Git blob checksums for all 102 upstream text files.
+
 ## Progress / 复现进度
 
 - [x] Confirm ICLR 2025 and pin the exact upstream commit.
 - [x] Import and verify 102 upstream text files against original Git blob hashes.
 - [x] Add offline tests, experiment preflight, MBPP baseline runner and measured-curve plotter.
 - [x] CI green: Python 3.9 syntax, 18 offline tests, CLI import smoke tests.
-- [ ] Download benchmark data and run a real-model baseline.
+- [x] Download original author MBPP data; verify 20 reference tests; run a real six-task CPU-model baseline (smoke evaluation).
 - [ ] Run official AFlow search and save raw optimization trajectories.
 - [ ] Perform untouched test evaluation and multi-seed statistical analysis.
-- [ ] Publish reproducible experimental plots and reports via GitHub Releases.
+- [x] Publish a source-backed real-model six-task SVG and raw evidence links.
+- [ ] Expand baseline to full validation with matched models, then publish repeated-run statistical reports.
 
 ## Acknowledgement / 致谢
 

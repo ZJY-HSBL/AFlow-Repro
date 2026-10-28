@@ -1,0 +1,13 @@
+{
+  "kind": "download_verified_author_archive",
+  "source": "FoundationAgents/AFlow",
+  "source_drive_id": "1DNoegtZiUhWtvkd2xoIuElmIi4ah7k8e",
+  "archive_sha256": "7089a373c27184ae1b67e322f8276642dab246359052989b03a27f48251ae053",
+  "archive_bytes": 3263393,
+  "uncompressed_bytes": 9754830,
+  "file_count": 15,
+  "mbpp_validate_exists": true,
+  "mbpp_test_exists": true,
+  "github_actions_url": "https://github.com/ZJY-HSBL/AFlow-Repro/actions/runs/40627997385",
+  "note": "Provenance report independently checked by GitHub Actions; does not include or redistribute dataset."
+}

@@ -1,0 +1,619 @@
+{
+  "source": "FoundationAgents/AFlow",
+  "upstream_commit": "3f457218fc716093fe53f6df8a5d5e6379d66346",
+  "sha_format": "Git SHA-1 blob; SHA1(b'blob <length>\\0' + contents)",
+  "verified_files": [
+    {
+      "path": ".gitignore",
+      "upstream_path": ".gitignore",
+      "git_blob_sha1": "dd449836d5e85240b08dd4fb78e9b0a2962faabd",
+      "size": 97
+    },
+    {
+      "path": "benchmarks/amc.py",
+      "upstream_path": "benchmarks/amc.py",
+      "git_blob_sha1": "dd4cfa3c020e13a31a1c42bd277b20a928c08980",
+      "size": 7265
+    },
+    {
+      "path": "benchmarks/bbh.py",
+      "upstream_path": "benchmarks/bbh.py",
+      "git_blob_sha1": "a5c50a4dc2b234c345c64e8ab6063a3ffdca25d0",
+      "size": 2216
+    },
+    {
+      "path": "benchmarks/benchmark.py",
+      "upstream_path": "benchmarks/benchmark.py",
+      "git_blob_sha1": "57450d1b1b739c1cc425375c6707f96662a7ac9b",
+      "size": 4418
+    },
+    {
+      "path": "benchmarks/drop.py",
+      "upstream_path": "benchmarks/drop.py",
+      "git_blob_sha1": "263c5b73a3b1fe50d2a7c0e2fc68248b238db567",
+      "size": 3111
+    },
+    {
+      "path": "benchmarks/gpqa.py",
+      "upstream_path": "benchmarks/gpqa.py",
+      "git_blob_sha1": "e7aedf5e7061e00d2a971b2a021129d5c833b7f9",
+      "size": 2220
+    },
+    {
+      "path": "benchmarks/gsm8k.py",
+      "upstream_path": "benchmarks/gsm8k.py",
+      "git_blob_sha1": "d97fd0af9b324429949a0f5478a0fb2a05481184",
+      "size": 2253
+    },
+    {
+      "path": "benchmarks/hotpotqa.py",
+      "upstream_path": "benchmarks/hotpotqa.py",
+      "git_blob_sha1": "dbf1a21edf48e82945c4fc9f250eb24d0551bc7f",
+      "size": 3040
+    },
+    {
+      "path": "benchmarks/humaneval.py",
+      "upstream_path": "benchmarks/humaneval.py",
+      "git_blob_sha1": "fe16ac3a8a88a8c14ac1f2e30ba020ade50e809a",
+      "size": 6131
+    },
+    {
+      "path": "benchmarks/liar.py",
+      "upstream_path": "benchmarks/liar.py",
+      "git_blob_sha1": "b6d6c2605d3d2b09dc0ed472bda5f9e5e60785e7",
+      "size": 2312
+    },
+    {
+      "path": "benchmarks/livecodebench.py",
+      "upstream_path": "benchmarks/livecodebench.py",
+      "git_blob_sha1": "39d1bf7835b603c63dda17d198e610eb4386b5f2",
+      "size": 13101
+    },
+    {
+      "path": "benchmarks/math.py",
+      "upstream_path": "benchmarks/math.py",
+      "git_blob_sha1": "d8cf234925d1576c9ed5d8a4e8527b2bbb3de023",
+      "size": 4450
+    },
+    {
+      "path": "benchmarks/mbpp.py",
+      "upstream_path": "benchmarks/mbpp.py",
+      "git_blob_sha1": "a9dd9d27261ba1b0e49a84bfeafbbd544669eff6",
+      "size": 4406
+    },
+    {
+      "path": "benchmarks/README.md",
+      "upstream_path": "benchmarks/README.md",
+      "git_blob_sha1": "c2b4778a1729f6aa5fa774dc08d8a68055c149e1",
+      "size": 1084
+    },
+    {
+      "path": "benchmarks/utils.py",
+      "upstream_path": "benchmarks/utils.py",
+      "git_blob_sha1": "794fcbb7dd41d13af36c4546c40c44797d19e565",
+      "size": 1578
+    },
+    {
+      "path": "benchmarks/wsc.py",
+      "upstream_path": "benchmarks/wsc.py",
+      "git_blob_sha1": "59f787e9d0cc23d75883acf125162babe9bc912b",
+      "size": 2216
+    },
+    {
+      "path": "config/config2.example.yaml",
+      "upstream_path": "config/config2.example.yaml",
+      "git_blob_sha1": "5abe8390f61660184b787e31c8723c7086861f9b",
+      "size": 323
+    },
+    {
+      "path": "data/download_data.py",
+      "upstream_path": "data/download_data.py",
+      "git_blob_sha1": "5b7c1d822923f3ac9fa367aa3eeec75766f43c9b",
+      "size": 4638
+    },
+    {
+      "path": "LICENSE",
+      "upstream_path": "LICENSE",
+      "git_blob_sha1": "73d5781fef293360c037e91a81e29e15cafef13a",
+      "size": 1073
+    },
+    {
+      "path": "docs/UPSTREAM_README.md",
+      "upstream_path": "README.md",
+      "git_blob_sha1": "de06b7a395156d2f3c5ad94792a56165b99d352c",
+      "size": 6285
+    },
+    {
+      "path": "requirements.txt",
+      "upstream_path": "requirements.txt",
+      "git_blob_sha1": "0eac6df7f5b919e4dce2ee8d1442852a4093bc92",
+      "size": 513
+    },
+    {
+      "path": "run_baseline.py",
+      "upstream_path": "run_baseline.py",
+      "git_blob_sha1": "e7fd043e54ccaa83829b1b829f0d4bda2a819062",
+      "size": 3810
+    },
+    {
+      "path": "run.py",
+      "upstream_path": "run.py",
+      "git_blob_sha1": "b4aa4ca30275b5fc01951962b3484f6ef43af534",
+      "size": 4808
+    },
+    {
+      "path": "scripts/async_llm.py",
+      "upstream_path": "scripts/async_llm.py",
+      "git_blob_sha1": "3e8d7cf60b5069ad9831755e10469c5865dce52e",
+      "size": 10558
+    },
+    {
+      "path": "scripts/evaluator.py",
+      "upstream_path": "scripts/evaluator.py",
+      "git_blob_sha1": "8a7ace5ca6e2ce71777f50151460995ffb54c9a0",
+      "size": 2776
+    },
+    {
+      "path": "scripts/formatter.py",
+      "upstream_path": "scripts/formatter.py",
+      "git_blob_sha1": "8a59fc69a1573191b3f13796947c619f4896fb6a",
+      "size": 8782
+    },
+    {
+      "path": "scripts/interface.py",
+      "upstream_path": "scripts/interface.py",
+      "git_blob_sha1": "900d03427de1b74201c4a3334a374f7544faa788",
+      "size": 2945
+    },
+    {
+      "path": "scripts/logs.py",
+      "upstream_path": "scripts/logs.py",
+      "git_blob_sha1": "fa1e7d32ea306a5dea2613365513f6bac7952f77",
+      "size": 7782
+    },
+    {
+      "path": "scripts/operator_an.py",
+      "upstream_path": "scripts/operator_an.py",
+      "git_blob_sha1": "d0201dea2e7abc68ced453b8f9eafae43ee8b920",
+      "size": 1965
+    },
+    {
+      "path": "scripts/operators.py",
+      "upstream_path": "scripts/operators.py",
+      "git_blob_sha1": "adbe46cd61d82a55494ee66b7355dadc3d3e0ca2",
+      "size": 15497
+    },
+    {
+      "path": "scripts/optimizer_utils/convergence_utils.py",
+      "upstream_path": "scripts/optimizer_utils/convergence_utils.py",
+      "git_blob_sha1": "243a89781281e01655ec48db5a612fe0725cebbf",
+      "size": 5814
+    },
+    {
+      "path": "scripts/optimizer_utils/data_utils.py",
+      "upstream_path": "scripts/optimizer_utils/data_utils.py",
+      "git_blob_sha1": "3cdbda8816bc8bc3ffbefdd5511a936d1ed381e5",
+      "size": 6103
+    },
+    {
+      "path": "scripts/optimizer_utils/evaluation_utils.py",
+      "upstream_path": "scripts/optimizer_utils/evaluation_utils.py",
+      "git_blob_sha1": "ab1951a54ad213dc4ca0d8821f02041c429f6b7a",
+      "size": 2454
+    },
+    {
+      "path": "scripts/optimizer_utils/experience_utils.py",
+      "upstream_path": "scripts/optimizer_utils/experience_utils.py",
+      "git_blob_sha1": "ceacfc7704fe3cd1c7b0583fdbd2bd329fde9662",
+      "size": 4582
+    },
+    {
+      "path": "scripts/optimizer_utils/graph_utils.py",
+      "upstream_path": "scripts/optimizer_utils/graph_utils.py",
+      "git_blob_sha1": "ae7ccb14c0895cb908d401145cf49b08b11e366d",
+      "size": 4807
+    },
+    {
+      "path": "scripts/optimizer.py",
+      "upstream_path": "scripts/optimizer.py",
+      "git_blob_sha1": "36a6cfc5e8774260ccf3036c059d536938b677c3",
+      "size": 10217
+    },
+    {
+      "path": "scripts/prompts/optimize_prompt.py",
+      "upstream_path": "scripts/prompts/optimize_prompt.py",
+      "git_blob_sha1": "7e9311103192c7c6a39600de840ad79b04865455",
+      "size": 5031
+    },
+    {
+      "path": "scripts/prompts/prompt.py",
+      "upstream_path": "scripts/prompts/prompt.py",
+      "git_blob_sha1": "16bf78af87b727d8da0646c4655f04f24b806687",
+      "size": 4432
+    },
+    {
+      "path": "scripts/utils/code.py",
+      "upstream_path": "scripts/utils/code.py",
+      "git_blob_sha1": "d7ec5c657b862cdd8a9ed555e35d2dcb9b2c3213",
+      "size": 3972
+    },
+    {
+      "path": "scripts/utils/common.py",
+      "upstream_path": "scripts/utils/common.py",
+      "git_blob_sha1": "c98ee9ddc77d13853a24a687d95f39799ff4527c",
+      "size": 876
+    },
+    {
+      "path": "scripts/utils/lcb_runner.py",
+      "upstream_path": "scripts/utils/lcb_runner.py",
+      "git_blob_sha1": "cb40350f5b68bad0e1bd2c3bcf446dc114e7bb2d",
+      "size": 18856
+    },
+    {
+      "path": "scripts/utils/sanitize.py",
+      "upstream_path": "scripts/utils/sanitize.py",
+      "git_blob_sha1": "c1265e6dc734befd705fc63d3f07ab847cc2bca9",
+      "size": 7355
+    },
+    {
+      "path": "scripts/workflow.py",
+      "upstream_path": "scripts/workflow.py",
+      "git_blob_sha1": "84bfd7baf9c285d5b989e4f69db408f99185ab9f",
+      "size": 634
+    },
+    {
+      "path": "workspace/DROP/workflows/processed_experience.json",
+      "upstream_path": "workspace/DROP/workflows/processed_experience.json",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0
+    },
+    {
+      "path": "workspace/DROP/workflows/round_1/__init__.py",
+      "upstream_path": "workspace/DROP/workflows/round_1/__init__.py",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0
+    },
+    {
+      "path": "workspace/DROP/workflows/round_1/graph.py",
+      "upstream_path": "workspace/DROP/workflows/round_1/graph.py",
+      "git_blob_sha1": "f460a1fa33bc783e80bb474b64ff46496a5a54c0",
+      "size": 789
+    },
+    {
+      "path": "workspace/DROP/workflows/round_1/log.json",
+      "upstream_path": "workspace/DROP/workflows/round_1/log.json",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0
+    },
+    {
+      "path": "workspace/DROP/workflows/round_1/prompt.py",
+      "upstream_path": "workspace/DROP/workflows/round_1/prompt.py",
+      "git_blob_sha1": "d651ea494a5ed256b2845359ddc893d211a71a64",
+      "size": 42
+    },
+    {
+      "path": "workspace/DROP/workflows/template/op_prompt.py",
+      "upstream_path": "workspace/DROP/workflows/template/op_prompt.py",
+      "git_blob_sha1": "2d776db1af8025090a54cb6388ccf8929b07808b",
+      "size": 902
+    },
+    {
+      "path": "workspace/DROP/workflows/template/operator_an.py",
+      "upstream_path": "workspace/DROP/workflows/template/operator_an.py",
+      "git_blob_sha1": "4e3065bfb0a77015e4755d3125b0e49b4ded919f",
+      "size": 701
+    },
+    {
+      "path": "workspace/DROP/workflows/template/operator.json",
+      "upstream_path": "workspace/DROP/workflows/template/operator.json",
+      "git_blob_sha1": "5725c4ce5de2c5877d767fab5f130ed69e540334",
+      "size": 850
+    },
+    {
+      "path": "workspace/DROP/workflows/template/operator.py",
+      "upstream_path": "workspace/DROP/workflows/template/operator.py",
+      "git_blob_sha1": "5d566585a7c89cfcef3b3af4fab2bd8df2f5113f",
+      "size": 2226
+    },
+    {
+      "path": "workspace/GSM8K/workflows/processed_experience.json",
+      "upstream_path": "workspace/GSM8K/workflows/processed_experience.json",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0
+    },
+    {
+      "path": "workspace/GSM8K/workflows/results.json",
+      "upstream_path": "workspace/GSM8K/workflows/results.json",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0
+    },
+    {
+      "path": "workspace/GSM8K/workflows/round_1/__init__.py",
+      "upstream_path": "workspace/GSM8K/workflows/round_1/__init__.py",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0
+    },
+    {
+      "path": "workspace/GSM8K/workflows/round_1/graph.py",
+      "upstream_path": "workspace/GSM8K/workflows/round_1/graph.py",
+      "git_blob_sha1": "77c8451c3a2b545c2278c5ee9ca7f8ce7041ad20",
+      "size": 791
+    },
+    {
+      "path": "workspace/GSM8K/workflows/round_1/log.json",
+      "upstream_path": "workspace/GSM8K/workflows/round_1/log.json",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0
+    },
+    {
+      "path": "workspace/GSM8K/workflows/round_1/prompt.py",
+      "upstream_path": "workspace/GSM8K/workflows/round_1/prompt.py",
+      "git_blob_sha1": "d651ea494a5ed256b2845359ddc893d211a71a64",
+      "size": 42
+    },
+    {
+      "path": "workspace/GSM8K/workflows/template/op_prompt.py",
+      "upstream_path": "workspace/GSM8K/workflows/template/op_prompt.py",
+      "git_blob_sha1": "9fbbb11ae7d83d3f25e551d336f107f36734144a",
+      "size": 1754
+    },
+    {
+      "path": "workspace/GSM8K/workflows/template/operator_an.py",
+      "upstream_path": "workspace/GSM8K/workflows/template/operator_an.py",
+      "git_blob_sha1": "fec33a6a67364fc6f43f396870f027bf125ed256",
+      "size": 530
+    },
+    {
+      "path": "workspace/GSM8K/workflows/template/operator.json",
+      "upstream_path": "workspace/GSM8K/workflows/template/operator.json",
+      "git_blob_sha1": "1a57ccd1a1f1b34a85bf2b64f3fe7e2f406d27c7",
+      "size": 976
+    },
+    {
+      "path": "workspace/GSM8K/workflows/template/operator.py",
+      "upstream_path": "workspace/GSM8K/workflows/template/operator.py",
+      "git_blob_sha1": "ba90155627b7ab7a195956b0bb2bcd8dea2b9344",
+      "size": 5576
+    },
+    {
+      "path": "workspace/HotpotQA/workflows/processed_experience.json",
+      "upstream_path": "workspace/HotpotQA/workflows/processed_experience.json",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0
+    },
+    {
+      "path": "workspace/HotpotQA/workflows/results.json",
+      "upstream_path": "workspace/HotpotQA/workflows/results.json",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0
+    },
+    {
+      "path": "workspace/HotpotQA/workflows/round_1/__init__.py",
+      "upstream_path": "workspace/HotpotQA/workflows/round_1/__init__.py",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0
+    },
+    {
+      "path": "workspace/HotpotQA/workflows/round_1/graph.py",
+      "upstream_path": "workspace/HotpotQA/workflows/round_1/graph.py",
+      "git_blob_sha1": "096047585502ed029ac6685e5f1c86597f4ab359",
+      "size": 797
+    },
+    {
+      "path": "workspace/HotpotQA/workflows/round_1/log.json",
+      "upstream_path": "workspace/HotpotQA/workflows/round_1/log.json",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0
+    },
+    {
+      "path": "workspace/HotpotQA/workflows/round_1/prompt.py",
+      "upstream_path": "workspace/HotpotQA/workflows/round_1/prompt.py",
+      "git_blob_sha1": "d651ea494a5ed256b2845359ddc893d211a71a64",
+      "size": 42
+    },
+    {
+      "path": "workspace/HotpotQA/workflows/template/op_prompt.py",
+      "upstream_path": "workspace/HotpotQA/workflows/template/op_prompt.py",
+      "git_blob_sha1": "2d776db1af8025090a54cb6388ccf8929b07808b",
+      "size": 902
+    },
+    {
+      "path": "workspace/HotpotQA/workflows/template/operator_an.py",
+      "upstream_path": "workspace/HotpotQA/workflows/template/operator_an.py",
+      "git_blob_sha1": "4e3065bfb0a77015e4755d3125b0e49b4ded919f",
+      "size": 701
+    },
+    {
+      "path": "workspace/HotpotQA/workflows/template/operator.json",
+      "upstream_path": "workspace/HotpotQA/workflows/template/operator.json",
+      "git_blob_sha1": "5725c4ce5de2c5877d767fab5f130ed69e540334",
+      "size": 850
+    },
+    {
+      "path": "workspace/HotpotQA/workflows/template/operator.py",
+      "upstream_path": "workspace/HotpotQA/workflows/template/operator.py",
+      "git_blob_sha1": "905c1de803edbaf9d191251afb9743e7b2b837d2",
+      "size": 2234
+    },
+    {
+      "path": "workspace/HumanEval/workflows/processed_experience.json",
+      "upstream_path": "workspace/HumanEval/workflows/processed_experience.json",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0
+    },
+    {
+      "path": "workspace/HumanEval/workflows/results.json",
+      "upstream_path": "workspace/HumanEval/workflows/results.json",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0
+    },
+    {
+      "path": "workspace/HumanEval/workflows/round_1/__init__.py",
+      "upstream_path": "workspace/HumanEval/workflows/round_1/__init__.py",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0
+    },
+    {
+      "path": "workspace/HumanEval/workflows/round_1/graph.py",
+      "upstream_path": "workspace/HumanEval/workflows/round_1/graph.py",
+      "git_blob_sha1": "1e2399b72ef9d26d8efcde500247b7f513c6fff4",
+      "size": 1213
+    },
+    {
+      "path": "workspace/HumanEval/workflows/round_1/log.json",
+      "upstream_path": "workspace/HumanEval/workflows/round_1/log.json",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0
+    },
+    {
+      "path": "workspace/HumanEval/workflows/round_1/prompt.py",
+      "upstream_path": "workspace/HumanEval/workflows/round_1/prompt.py",
+      "git_blob_sha1": "d651ea494a5ed256b2845359ddc893d211a71a64",
+      "size": 42
+    },
+    {
+      "path": "workspace/HumanEval/workflows/template/op_prompt.py",
+      "upstream_path": "workspace/HumanEval/workflows/template/op_prompt.py",
+      "git_blob_sha1": "9653eea3e11e860bb4a9a221cb1bc8a73fb784bf",
+      "size": 1145
+    },
+    {
+      "path": "workspace/HumanEval/workflows/template/operator_an.py",
+      "upstream_path": "workspace/HumanEval/workflows/template/operator_an.py",
+      "git_blob_sha1": "95db7b90360d0a23c1fbaf2df36da8e652d9c2e9",
+      "size": 681
+    },
+    {
+      "path": "workspace/HumanEval/workflows/template/operator.json",
+      "upstream_path": "workspace/HumanEval/workflows/template/operator.json",
+      "git_blob_sha1": "5c3234e33ad63eb989bcfa2ed7ddd9227bec51ce",
+      "size": 1262
+    },
+    {
+      "path": "workspace/HumanEval/workflows/template/operator.py",
+      "upstream_path": "workspace/HumanEval/workflows/template/operator.py",
+      "git_blob_sha1": "05469663d41543714e4c2085cac4edbf28376f65",
+      "size": 5652
+    },
+    {
+      "path": "workspace/MATH/workflows/processed_experience.json",
+      "upstream_path": "workspace/MATH/workflows/processed_experience.json",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0
+    },
+    {
+      "path": "workspace/MATH/workflows/results.json",
+      "upstream_path": "workspace/MATH/workflows/results.json",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0
+    },
+    {
+      "path": "workspace/MATH/workflows/round_1/__init__.py",
+      "upstream_path": "workspace/MATH/workflows/round_1/__init__.py",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0
+    },
+    {
+      "path": "workspace/MATH/workflows/round_1/graph.py",
+      "upstream_path": "workspace/MATH/workflows/round_1/graph.py",
+      "git_blob_sha1": "f0c3b9220c314d4872fb57181f013036f29364f3",
+      "size": 789
+    },
+    {
+      "path": "workspace/MATH/workflows/round_1/log.json",
+      "upstream_path": "workspace/MATH/workflows/round_1/log.json",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0
+    },
+    {
+      "path": "workspace/MATH/workflows/round_1/prompt.py",
+      "upstream_path": "workspace/MATH/workflows/round_1/prompt.py",
+      "git_blob_sha1": "d651ea494a5ed256b2845359ddc893d211a71a64",
+      "size": 42
+    },
+    {
+      "path": "workspace/MATH/workflows/template/op_prompt.py",
+      "upstream_path": "workspace/MATH/workflows/template/op_prompt.py",
+      "git_blob_sha1": "9fbbb11ae7d83d3f25e551d336f107f36734144a",
+      "size": 1754
+    },
+    {
+      "path": "workspace/MATH/workflows/template/operator_an.py",
+      "upstream_path": "workspace/MATH/workflows/template/operator_an.py",
+      "git_blob_sha1": "fec33a6a67364fc6f43f396870f027bf125ed256",
+      "size": 530
+    },
+    {
+      "path": "workspace/MATH/workflows/template/operator.json",
+      "upstream_path": "workspace/MATH/workflows/template/operator.json",
+      "git_blob_sha1": "1a57ccd1a1f1b34a85bf2b64f3fe7e2f406d27c7",
+      "size": 976
+    },
+    {
+      "path": "workspace/MATH/workflows/template/operator.py",
+      "upstream_path": "workspace/MATH/workflows/template/operator.py",
+      "git_blob_sha1": "086e381849bd816ddf686419c1310f59e9af6845",
+      "size": 5574
+    },
+    {
+      "path": "workspace/MBPP/workflows/processed_experience.json",
+      "upstream_path": "workspace/MBPP/workflows/processed_experience.json",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0
+    },
+    {
+      "path": "workspace/MBPP/workflows/results.json",
+      "upstream_path": "workspace/MBPP/workflows/results.json",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0
+    },
+    {
+      "path": "workspace/MBPP/workflows/round_1/__init__.py",
+      "upstream_path": "workspace/MBPP/workflows/round_1/__init__.py",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0
+    },
+    {
+      "path": "workspace/MBPP/workflows/round_1/graph.py",
+      "upstream_path": "workspace/MBPP/workflows/round_1/graph.py",
+      "git_blob_sha1": "08cc4e54c28633447b22370121a374763a2fb7a9",
+      "size": 1202
+    },
+    {
+      "path": "workspace/MBPP/workflows/round_1/log.json",
+      "upstream_path": "workspace/MBPP/workflows/round_1/log.json",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0
+    },
+    {
+      "path": "workspace/MBPP/workflows/round_1/prompt.py",
+      "upstream_path": "workspace/MBPP/workflows/round_1/prompt.py",
+      "git_blob_sha1": "d651ea494a5ed256b2845359ddc893d211a71a64",
+      "size": 42
+    },
+    {
+      "path": "workspace/MBPP/workflows/template/op_prompt.py",
+      "upstream_path": "workspace/MBPP/workflows/template/op_prompt.py",
+      "git_blob_sha1": "9653eea3e11e860bb4a9a221cb1bc8a73fb784bf",
+      "size": 1145
+    },
+    {
+      "path": "workspace/MBPP/workflows/template/operator_an.py",
+      "upstream_path": "workspace/MBPP/workflows/template/operator_an.py",
+      "git_blob_sha1": "95db7b90360d0a23c1fbaf2df36da8e652d9c2e9",
+      "size": 681
+    },
+    {
+      "path": "workspace/MBPP/workflows/template/operator.json",
+      "upstream_path": "workspace/MBPP/workflows/template/operator.json",
+      "git_blob_sha1": "5c3234e33ad63eb989bcfa2ed7ddd9227bec51ce",
+      "size": 1262
+    },
+    {
+      "path": "workspace/MBPP/workflows/template/operator.py",
+      "upstream_path": "workspace/MBPP/workflows/template/operator.py",
+      "git_blob_sha1": "4f1a3fbf64dd661dd0d447b0042a997ccb318ff6",
+      "size": 5637
+    }
+  ]
+}

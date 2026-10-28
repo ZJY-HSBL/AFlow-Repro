@@ -1,0 +1,42 @@
+name: Author dataset integrity and evaluator verification
+on:
+  push:
+    branches: [experiment/mbpp-real-evaluation]
+    paths:
+      - tools/fetch_author_data.py
+      - tools/sandbox_mbpp.py
+      - tools/evaluate_mbpp_oracle.py
+      - .github/workflows/author-data.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify-author-data:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.9"
+      - name: Install official dependencies and gdown
+        run: |
+          python -m pip install -r requirements-repro.txt
+          python -m pip install gdown==5.2.0
+      - name: Download and verify original author datasets
+        run: python tools/fetch_author_data.py
+      - name: Pull isolated code execution environment
+        run: docker pull python:3.11-slim
+      - name: Run a real 20-task reference-oracle evaluator check
+        run: python -m tools.evaluate_mbpp_oracle --limit 20
+      - name: Preserve exact measured evaluator evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: original-author-mbpp-evaluator-evidence
+          path: |
+            experiments/author_data_manifest.json
+            experiments/author-mbpp-oracle/*.json
+            experiments/author-mbpp-oracle/*.csv
+            experiments/author-mbpp-oracle/log.json
+          if-no-files-found: ignore
